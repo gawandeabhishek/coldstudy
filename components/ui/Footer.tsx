@@ -1,4 +1,4 @@
-let data = [
+const data = [
     {
         title: "Privacy & Policy"
     },
