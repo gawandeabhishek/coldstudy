@@ -1,16 +1,24 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { Moon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
-    return (
-      <nav className="px-2">
-        <ul className="p-2 flex justify-between">
-          <li><Button className="rounded-full"><Moon /></Button></li>
-          <li><Button>Login</Button></li>
-        </ul>
-        <div>
-          
-        </div>
-      </nav>
-    );
-  }
+  const [theme, setTheme] = useState(true);
+  return (
+    <nav>
+      <ul className="py-2 flex justify-between">
+        <li onClick={() => setTheme(!theme)}>
+          <Button className="rounded-full">{theme ? <Moon /> : <Sun />}</Button>
+        </li>
+        <li>
+          <Button asChild>
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </li>
+      </ul>
+    </nav>
+  );
+}
