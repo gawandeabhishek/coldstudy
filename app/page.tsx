@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <main className="p-10 md:p-20">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-32 min-h-[72vh]">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-32 min-h-[82vh]">
         <motion.span
           variants={{
             hidden: { opacity: 0, x: -500 },
@@ -114,10 +114,12 @@ export default function Home() {
           </motion.p>
         </motion.div>
       </div>
-      {/* to animate */}
       <motion.div
         className="flex flex-wrap items-center justify-center py-10 gap-20"
-        style={{ scale }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }} 
       >
         {tempdata.map((item, idx) => (
           <Card item={item} key={idx} />

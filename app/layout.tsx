@@ -30,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative px-6 py-2 min-h-[98dvh]`}
       >
-        <Navbar />
+        <div className=" sticky top-2">
+          <Navbar />
+        </div>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
